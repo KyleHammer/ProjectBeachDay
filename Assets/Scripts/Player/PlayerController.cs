@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         if (currentDashCooldown > 0)
         {
             currentDashCooldown -= Time.deltaTime;
-            Debug.Log(currentDashCooldown);
+            Debug.Log("Dash Cooldown: " + currentDashCooldown);
             if (currentDashCooldown < 0)
             {
                 currentDashCooldown = 0;
