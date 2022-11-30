@@ -18,8 +18,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashDuration = 0.1f;
     [SerializeField] private float dashCooldown = 3.0f;
     [SerializeField] private List<TrailRenderer> trailRenderers = new List<TrailRenderer>();
+    
+    [Header("Sound Effects")]
     [SerializeField] private AudioSource dashSFX;
     [SerializeField] private AudioSource walkSFX;
+    [SerializeField] private AudioSource gunSFX;
 
     private bool canDash = true;
     private float currentDashCooldown;
@@ -28,10 +31,12 @@ public class PlayerController : MonoBehaviour
 
     private bool movementEnabled = true;
     private Vector2 movementInput = Vector2.zero;
+    private Gun gun;
 
     private void Start()
     {
         DisableTrail();
+        gun = GetComponentInChildren<Gun>();
     }
 
     private void FixedUpdate()
@@ -77,6 +82,15 @@ public class PlayerController : MonoBehaviour
         if(!dashSFX.isPlaying)
         {
             dashSFX.Play();
+        }
+    }
+
+    public void Shoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            gunSFX.Play();
+            gun.Shoot();
         }
     }
 
