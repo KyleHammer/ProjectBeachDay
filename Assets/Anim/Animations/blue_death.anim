@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: blue_death
-  serializedVersion: 6
+  serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1920674509345141009, guid: 0cdbecfa42cbd204292016c80d3ba974, type: 3}
+      value: {fileID: -1515883120, guid: 04c44d530b5b7ab45939c7c7105a432a, type: 3}
     - time: 0.016666668
-      value: {fileID: -5641608114994521181, guid: 0cdbecfa42cbd204292016c80d3ba974, type: 3}
+      value: {fileID: 1803583881, guid: 04c44d530b5b7ab45939c7c7105a432a, type: 3}
     - time: 0.033333335
-      value: {fileID: 2235474584140758223, guid: 0cdbecfa42cbd204292016c80d3ba974, type: 3}
+      value: {fileID: 1137107542, guid: 04c44d530b5b7ab45939c7c7105a432a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -43,10 +43,11 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+      isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: 1920674509345141009, guid: 0cdbecfa42cbd204292016c80d3ba974, type: 3}
-    - {fileID: -5641608114994521181, guid: 0cdbecfa42cbd204292016c80d3ba974, type: 3}
-    - {fileID: 2235474584140758223, guid: 0cdbecfa42cbd204292016c80d3ba974, type: 3}
+    - {fileID: -1515883120, guid: 04c44d530b5b7ab45939c7c7105a432a, type: 3}
+    - {fileID: 1803583881, guid: 04c44d530b5b7ab45939c7c7105a432a, type: 3}
+    - {fileID: 1137107542, guid: 04c44d530b5b7ab45939c7c7105a432a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
