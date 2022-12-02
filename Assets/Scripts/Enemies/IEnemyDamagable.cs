@@ -14,8 +14,11 @@ public class IEnemyDamagable : MonoBehaviour
     [SerializeField] private float maxHealth = 10f;
     private float currentHealth = 0;
 
+    private AudioSource hitSFX;
+
     protected virtual void Start()
     {
+        hitSFX = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultMaterial = spriteRenderer.material;
 
@@ -29,6 +32,8 @@ public class IEnemyDamagable : MonoBehaviour
 
     public void TakeDamage(float damageTaken)
     {
+        hitSFX.Play();
+        
         currentHealth -= damageTaken;
         
         if (currentHealth > 0)
@@ -37,6 +42,8 @@ public class IEnemyDamagable : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.PlayAudio("BasicHit");
+            GameManager.Instance.PlayAudio("CrabDeath");
             Destroy(gameObject);
         }
     }
