@@ -4,23 +4,30 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float invulnerabilityFrames = 2.5f;
     private float currentInvulnerabilityFrames;
+    private SpriteRenderer playerSprite;
+    private float flashSpeed = 0.1f;
+    private bool isInvulnerable = false;
+
     [SerializeField] private float maxHealth = 5.0f;
     private float currentHealth;
 
     private bool isGameOver = false;
-    private bool isInvulnerable = false;
+    
     private HealthUI healthUI;
+
+    [SerializeField] private AudioSource hitSFX;
     
     // Start is called before the first frame update
     void Start()
     {
         healthUI = GameManager.Instance.GetGameUI().GetComponentInChildren<HealthUI>();
+        playerSprite = GetComponent<SpriteRenderer>();
         
         currentHealth = maxHealth;
-        SetInvulnerability(true);
-        
         healthUI.SetMaxHealth(maxHealth);
         healthUI.SetHealth(currentHealth);
+        
+        SetInvulnerability(true);
     }
 
     // Update is called once per frame
@@ -32,18 +39,29 @@ public class PlayerHealth : MonoBehaviour
     private void InvulFrameCheck()
     {
         if (!isInvulnerable || isGameOver) return;
-        
+
+        PlayerFlash();
+
         currentInvulnerabilityFrames -= Time.deltaTime;
         
         if (currentInvulnerabilityFrames <= 0)
             SetInvulnerability(false);
     }
+
+    private void PlayerFlash()
+    {
+        if (Time.timeSinceLevelLoad % flashSpeed > flashSpeed / 2)
+            playerSprite.enabled = false;
+        else
+            playerSprite.enabled = true;
+    }
     
-    public void DealDamage(float damage)
+    public void TakeDamage(float damage)
     {
         if (isInvulnerable || isGameOver) return;
         
         currentHealth -= damage;
+        hitSFX.Play();
         healthUI.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
@@ -71,6 +89,7 @@ public class PlayerHealth : MonoBehaviour
         {
             isInvulnerable = false;
             currentInvulnerabilityFrames = 0;
+            playerSprite.enabled = true;
         }
     }
 }

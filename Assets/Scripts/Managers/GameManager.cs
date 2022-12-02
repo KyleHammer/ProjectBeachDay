@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [SerializeField] private AudioSource hitSFX;
+    [SerializeField] private AudioSource crabDeathSFX;
+
     private GameObject player;
     private GameObject gameUI;
 
@@ -41,5 +44,21 @@ public class GameManager : MonoBehaviour
     public void SetGameUI(GameObject newGameUI)
     {
         gameUI = newGameUI;
+    }
+
+    public void PlayAudio(string audioName)
+    {
+        switch (audioName)
+        {
+            case "BasicHit":
+                hitSFX.Play();
+                break;
+            case "CrabDeath":
+                crabDeathSFX.Play();
+                break;
+            default:
+                Debug.LogError("No sound effect for " + audioName);
+                return;
+        }
     }
 }

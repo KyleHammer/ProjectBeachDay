@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WalkingUnit : MonoBehaviour
+public class WalkingUnit : IEnemyDamagable
 {
     private Transform playerTransfrom;
 
@@ -8,8 +8,9 @@ public class WalkingUnit : MonoBehaviour
     [SerializeField] private float moveSpeed = 3;
 
     // Start is called before the first frame update
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         playerTransfrom = GameManager.Instance.GetPlayer().transform;
     }
     
