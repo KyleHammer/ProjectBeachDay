@@ -10,7 +10,7 @@ public class WalkingUnit : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        playerTransfrom = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransfrom = GameManager.Instance.GetPlayer().transform;
     }
     
     private void FixedUpdate()

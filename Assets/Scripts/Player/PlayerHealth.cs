@@ -7,13 +7,20 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float maxHealth = 5.0f;
     private float currentHealth;
 
+    private bool isGameOver = false;
     private bool isInvulnerable = false;
+    private HealthUI healthUI;
     
     // Start is called before the first frame update
     void Start()
     {
+        healthUI = GameManager.Instance.GetGameUI().GetComponentInChildren<HealthUI>();
+        
         currentHealth = maxHealth;
         SetInvulnerability(true);
+        
+        healthUI.SetMaxHealth(maxHealth);
+        healthUI.SetHealth(currentHealth);
     }
 
     // Update is called once per frame
@@ -24,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void InvulFrameCheck()
     {
-        if (!isInvulnerable) return;
+        if (!isInvulnerable || isGameOver) return;
         
         currentInvulnerabilityFrames -= Time.deltaTime;
         
@@ -34,10 +41,10 @@ public class PlayerHealth : MonoBehaviour
     
     public void DealDamage(float damage)
     {
-        if (isInvulnerable) return;
+        if (isInvulnerable || isGameOver) return;
         
         currentHealth -= damage;
-        Debug.Log("Damage Dealt");
+        healthUI.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
             GameOver();
@@ -47,7 +54,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("You Died");
+        SetInvulnerability(true);
+        isGameOver = true;
+        
+        Debug.Log("Game Over");
     }
 
     private void SetInvulnerability(bool newInvulnerabilityFrames)

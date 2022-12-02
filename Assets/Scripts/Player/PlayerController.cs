@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput = Vector2.zero;
     private Gun gun;
 
+    private void Awake()
+    {
+        GameManager.Instance.SetPlayer(this.gameObject);
+    }
+
     private void Start()
     {
         DisableTrail();
