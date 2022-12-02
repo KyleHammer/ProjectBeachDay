@@ -447,7 +447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626259fcbe39b624191416264d7af9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 306303655}
 --- !u!1 &354983634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,6 +1846,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0e2c36514cdbe49bf69d5de84a7173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: e05fbbe509e8ce74abe7dbfcb03029b5, type: 2}
+  flashDuration: 0.4
+  maxHealth: 20
+  currentHealth: 0
   moveSpeed: 2
 --- !u!114 &785926902
 MonoBehaviour:

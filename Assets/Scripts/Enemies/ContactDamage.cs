@@ -11,7 +11,7 @@ public class ContactDamage : MonoBehaviour
     {
         if (col.transform.CompareTag("Player"))
         {
-            col.gameObject.GetComponent<PlayerHealth>().DealDamage(damage);
+            col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
     }
 }

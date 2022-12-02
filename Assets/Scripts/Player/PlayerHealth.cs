@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
             SetInvulnerability(false);
     }
     
-    public void DealDamage(float damage)
+    public void TakeDamage(float damage)
     {
         if (isInvulnerable || isGameOver) return;
         

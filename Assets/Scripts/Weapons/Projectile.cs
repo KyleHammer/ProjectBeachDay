@@ -17,8 +17,7 @@ public class Projectile : MonoBehaviour
         {
             if (col.transform.CompareTag("Enemy"))
             {
-                // Deal damage logic
-                Debug.Log("Enemy Hit");
+                col.GetComponent<IEnemyDamagable>().TakeDamage(damage);
             }
             
             Destroy(this.gameObject);
