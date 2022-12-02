@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 420190107242244198}
   - component: {fileID: 3001907671360365481}
   - component: {fileID: 3001907671360365480}
+  - component: {fileID: 4471120975197930019}
   m_Layer: 3
   m_Name: Player Red
   m_TagString: Player
@@ -994,6 +995,18 @@ MonoBehaviour:
   dashSFX: {fileID: 3001907671360365487}
   walkSFX: {fileID: 3001907671360365486}
   gunSFX: {fileID: 420190107242244198}
+--- !u!114 &4471120975197930019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3001907671360365479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4be3446d8766ea4988484bbdd2aac9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5019926794711382892
 GameObject:
   m_ObjectHideFlags: 0
