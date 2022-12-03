@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private bool isPlayerProjectile = true;
+    
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
@@ -34,15 +36,24 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.transform.CompareTag("Player") && !col.transform.CompareTag("Hole"))
+        if (col.transform.CompareTag("Hole")) return;
+        
+        if (col.transform.CompareTag("Player"))
         {
-            if (col.transform.CompareTag("Enemy"))
-            {
-                col.GetComponent<IEnemyDamagable>().TakeDamage(damage);
-            }
-
-            RemoveProjectile();
+            if(!isPlayerProjectile)
+                col.GetComponent<PlayerHealth>().TakeDamage(damage);
+            else
+                return;
         }
+        else if (col.transform.CompareTag("Enemy"))
+        {
+            if(isPlayerProjectile)
+                col.GetComponent<IEnemyDamagable>().TakeDamage(damage);
+            else
+                return;
+        }
+        
+        RemoveProjectile();
     }
 
     public void SetDamage(float newDamage)

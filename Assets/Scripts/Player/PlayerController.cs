@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     [Header("Sound Effects")]
     [SerializeField] private AudioSource dashSFX;
     [SerializeField] private AudioSource walkSFX;
-    [SerializeField] private AudioSource gunSFX;
 
     private DashUI dashUI;
     private bool canDash = true;
@@ -118,7 +117,6 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            gunSFX.Play();
             gun.Shoot();
         }
     }

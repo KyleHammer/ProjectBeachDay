@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private PlayerStatsObject currentStats;
     [Space]
     
-    [SerializeField] private float hitInvulnerabilityFrames = 2.5f;
+    [SerializeField] private float hitInvulnerabilityFrames = 1.5f;
     private float currentInvulnerabilityFrames;
     private SpriteRenderer playerSprite;
     private float flashSpeed = 0.1f;
