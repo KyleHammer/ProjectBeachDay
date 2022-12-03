@@ -13,6 +13,8 @@ public class IEnemyDamagable : MonoBehaviour
     
     [SerializeField] private float maxHealth = 10f;
     private float currentHealth = 0;
+
+    protected Rigidbody2D rb;
     
     protected Transform playerTransfrom;
 
@@ -21,7 +23,8 @@ public class IEnemyDamagable : MonoBehaviour
     protected virtual void Start()
     {
         GameManager.Instance.AddEnemy(this.gameObject);
-        
+
+        rb = GetComponent<Rigidbody2D>();
         hitSFX = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultMaterial = spriteRenderer.material;

@@ -10,7 +10,10 @@ public class WalkingUnit : IEnemyDamagable
         if (playerTransfrom != null)
         {
             float step =  moveSpeed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, playerTransfrom.position, step);
+
+            Vector2 direction = Vector2.ClampMagnitude(playerTransfrom.position - transform.position, 1);
+            
+            rb.MovePosition((Vector2) transform.position + direction * step);
         }
         else
         {
