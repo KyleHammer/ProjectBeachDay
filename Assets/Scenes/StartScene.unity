@@ -1353,6 +1353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dasher
       objectReference: {fileID: 0}
+    - target: {fileID: 8169015094562980899, guid: 8bd2ee0fe558d5243bc0827dbb139adf, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd2ee0fe558d5243bc0827dbb139adf, type: 3}

@@ -30,7 +30,7 @@ public class CameraFollow : MonoBehaviour
             
             foreach(GameObject enemy in GameManager.Instance.GetEnemies())
             {
-                tg.AddMember(enemy.transform, 0.2f, 1);
+                tg.AddMember(enemy.transform, 0.3f, 1);
             }
 
             cam.Follow = tg.transform;

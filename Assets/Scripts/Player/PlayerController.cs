@@ -69,12 +69,20 @@ public class PlayerController : MonoBehaviour
         DashUpdate();
         PlayWalkSound();
     }
+    
+    public void Quit(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            GameManager.Instance.Quit();
+        }
+    }
 
     public void ForceRestart(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            // Reset logic here
+            GameManager.Instance.Restart();
         }
     }
     

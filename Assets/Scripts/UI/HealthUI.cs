@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +21,6 @@ public class HealthUI : MonoBehaviour
     public void SetHealth(float health)
     {
         slider.value = health;
-        hpText.text = health + " / " + slider.maxValue;
+        hpText.text = health.ToString("F1") + " / " + slider.maxValue.ToString("F1");
     }
 }

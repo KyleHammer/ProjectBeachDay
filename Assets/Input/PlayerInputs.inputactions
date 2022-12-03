@@ -42,12 +42,21 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "a64ecc28-a50b-45d7-97c5-76722c948e59",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "ForceReset",
                     "type": "Button",
                     "id": "ff76d620-3e99-4f7e-bd19-537e75fd1810",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=3)",
+                    "interactions": "Hold(duration=1.5)",
                     "initialStateCheck": true
                 }
             ],
@@ -269,6 +278,28 @@
                     "processors": "",
                     "groups": "Keyboard/Mouse",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8bcaf4a7-c63a-4f7c-b14f-95371808b356",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a594f4c6-4fca-4297-8dfd-ca914095093a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard/Mouse",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

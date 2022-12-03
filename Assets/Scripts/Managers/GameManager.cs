@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private int score = 0;
     [SerializeField] private int scoreIncrease = 100;
+
+    private GameObject gameOverScreen;
     
     [SerializeField] private AudioSource music;
     [SerializeField] private AudioSource hitSFX;
@@ -66,6 +69,9 @@ public class GameManager : MonoBehaviour
     public void SetGameUI(GameObject newGameUI)
     {
         gameUI = newGameUI;
+
+        gameOverScreen = gameUI.GetComponentInChildren<GameOverUI>().gameObject;
+        gameOverScreen.SetActive(false);
     }
     
     // Set in each NextRoomInteractable Start()
@@ -138,6 +144,9 @@ public class GameManager : MonoBehaviour
         playerDeathSFX.Play();
         ResetAllStats();
         player.SetActive(false);
+        enemies.Clear();
+        
+        gameOverScreen.SetActive(true);
     }
 
     private void ResetAllStats()
@@ -168,5 +177,20 @@ public class GameManager : MonoBehaviour
                 Debug.LogError("No sound effect for " + audioName);
                 return;
         }
+    }
+
+    public void Restart()
+    {
+        Destroy(this.gameObject);
+        SceneManager.LoadScene("StartScene");
+    }
+
+    public void Quit()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        
+        Application.Quit();
     }
 }

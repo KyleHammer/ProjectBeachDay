@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -236,9 +236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: e05fbbe509e8ce74abe7dbfcb03029b5, type: 2}
   stats: {fileID: 11400000, guid: 221964b03c6b60d40ab06f9bd89846c8, type: 2}
-  maxHealth: 3
+  maxHealth: 5
   dashCooldown: 2
-  dashForce: 200
+  dashForce: 20000
 --- !u!114 &3516717092207138768
 MonoBehaviour:
   m_ObjectHideFlags: 0
