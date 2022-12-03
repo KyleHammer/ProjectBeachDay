@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
-    private List<ParticleSystem> particleSystems = new List<ParticleSystem>();
+    public ParticleSystem trailParticle;
 
     private float damage = 1f;
     private float bulletLifetime = 2.0f;
@@ -23,8 +23,6 @@ public class Projectile : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-
-        particleSystems = GetComponentsInChildren<ParticleSystem>().ToList();
     }
 
     private void Update()
@@ -66,9 +64,9 @@ public class Projectile : MonoBehaviour
         sr.enabled = false;
         boxCollider.enabled = false;
 
-        foreach (var particleSystem in particleSystems)
+        if(trailParticle != null)
         {
-            particleSystem.Stop();
+            trailParticle.Stop();
         }
 
         StartCoroutine(DestroyProjectile());
