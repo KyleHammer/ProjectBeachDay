@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Hole
   layers:
   - Default
   - TransparentFX
@@ -39,11 +40,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: GroundLayer
+  - name: Ground
     uniqueID: 1617178237
     locked: 0
   - name: Wall
     uniqueID: 4057403019
+    locked: 0
+  - name: Hole
+    uniqueID: 3597168009
     locked: 0
   - name: Default
     uniqueID: 0

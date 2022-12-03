@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     private List<ParticleSystem> particleSystems = new List<ParticleSystem>();
 
     private float damage = 1f;
+    private float bulletLifetime = 2.0f;
 
     private float destroyDelay = 2.0f;
     
@@ -24,9 +25,16 @@ public class Projectile : MonoBehaviour
         particleSystems = GetComponentsInChildren<ParticleSystem>().ToList();
     }
 
+    private void Update()
+    {
+        bulletLifetime -= Time.deltaTime;
+        if(bulletLifetime < 0)
+            Destroy(this.gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.transform.CompareTag("Player"))
+        if (!col.transform.CompareTag("Player") && !col.transform.CompareTag("Hole"))
         {
             if (col.transform.CompareTag("Enemy"))
             {
