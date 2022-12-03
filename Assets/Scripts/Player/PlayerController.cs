@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,10 +25,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource walkSFX;
     [SerializeField] private AudioSource gunSFX;
 
+    private DashUI dashUI;
     private bool canDash = true;
     private float currentDashCooldown;
     private float dashTime = 0;
     private Vector2 dashDirection = Vector2.zero;
+    private PlayerHealth playerHealth;
 
     private bool movementEnabled = true;
     private Vector2 movementInput = Vector2.zero;
@@ -38,6 +41,21 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.SetPlayer(this.gameObject);
         DisableTrail();
         gun = GetComponentInChildren<Gun>();
+        playerHealth = GetComponent<PlayerHealth>();
+        
+        StartCoroutine(LateStart());
+    }
+    
+    // gameUI is assigned in start
+    // So PlayerController needs to get gameUI after it has been assigned (through LateStart)
+    private IEnumerator LateStart()
+    {
+        // Wait 1 frame after being called
+        yield return 0;
+        
+        dashUI = GameManager.Instance.GetGameUI().GetComponentInChildren<DashUI>();
+        dashUI.SetMaxDashValue(dashCooldown);
+        dashUI.SetDashValue(currentDashCooldown);
     }
 
     private void FixedUpdate()
@@ -74,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
         canDash = false;
         currentDashCooldown = dashCooldown;
+        playerHealth.SetInvulnerability(true, dashDuration + 0.5f);
         
         EnableTrail();
             
@@ -129,7 +148,8 @@ public class PlayerController : MonoBehaviour
         if (currentDashCooldown > 0)
         {
             currentDashCooldown -= Time.deltaTime;
-            Debug.Log("Dash Cooldown: " + currentDashCooldown);
+            dashUI.SetDashValue(currentDashCooldown);
+            
             if (currentDashCooldown < 0)
             {
                 currentDashCooldown = 0;

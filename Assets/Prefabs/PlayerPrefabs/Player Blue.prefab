@@ -8,6 +8,42 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3001907670462777864, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670462777864, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670462777864, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670517974975, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670517974975, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670517974975, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907671357834142, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907671357834142, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907671357834142, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3001907671360365479, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
       propertyPath: m_Name
       value: Player Blue

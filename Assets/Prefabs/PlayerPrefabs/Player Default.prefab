@@ -8,6 +8,46 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3001907670462777864, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670462777864, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670462777864, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670462777867, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.033999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670517974974, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670517974975, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907670517974975, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907671357834137, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08400001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907671357834142, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001907671357834142, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3001907671360365476, guid: b76d83a302ed6154fa7bea79df3049ef, type: 3}
       propertyPath: m_Size.y
       value: 0.4

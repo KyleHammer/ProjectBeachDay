@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private float invulnerabilityFrames = 2.5f;
+    [SerializeField] private float hitInvulnerabilityFrames = 2.5f;
     private float currentInvulnerabilityFrames;
     private SpriteRenderer playerSprite;
     private float flashSpeed = 0.1f;
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         
         currentHealth = maxHealth;
         
-        SetInvulnerability(true);
+        SetInvulnerability(true, hitInvulnerabilityFrames);
         
         StartCoroutine(LateStart());
     }
@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
         currentInvulnerabilityFrames -= Time.deltaTime;
         
         if (currentInvulnerabilityFrames <= 0)
-            SetInvulnerability(false);
+            SetInvulnerability(false, 0);
     }
 
     private void PlayerFlash()
@@ -80,18 +80,18 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
             GameOver();
         else
-            SetInvulnerability(true);
+            SetInvulnerability(true, hitInvulnerabilityFrames);
     }
 
     private void GameOver()
     {
-        SetInvulnerability(true);
+        SetInvulnerability(true, 0);
         isGameOver = true;
         
         Debug.Log("Game Over");
     }
 
-    private void SetInvulnerability(bool newInvulnerabilityFrames)
+    public void SetInvulnerability(bool newInvulnerabilityFrames, float invulnerabilityFrames)
     {
         if (newInvulnerabilityFrames)
         {
