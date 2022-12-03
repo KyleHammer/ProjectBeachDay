@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStats: {fileID: 11400000, guid: c8940b6a809526d4f8344e50257eaa3a, type: 2}
-  hitInvulnerabilityFrames: 2.5
+  hitInvulnerabilityFrames: 1.5
   hitSFX: {fileID: 5804305393356394779}
 --- !u!114 &8979954248635730919
 MonoBehaviour:

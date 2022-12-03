@@ -3738,6 +3738,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1219779215, guid: fb215df6743031741bfebd4fe4e85aa0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240496533, guid: fb215df6743031741bfebd4fe4e85aa0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098494108383712077, guid: fb215df6743031741bfebd4fe4e85aa0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -176.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2576483449436513430, guid: fb215df6743031741bfebd4fe4e85aa0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -110
+      objectReference: {fileID: 0}
     - target: {fileID: 5732325291658012358, guid: fb215df6743031741bfebd4fe4e85aa0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
