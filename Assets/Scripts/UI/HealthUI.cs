@@ -1,10 +1,12 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
 {
     private Slider slider;
+    [SerializeField] private TextMeshProUGUI hpText;
 
     private void Start()
     {
@@ -20,5 +22,6 @@ public class HealthUI : MonoBehaviour
     public void SetHealth(float health)
     {
         slider.value = health;
+        hpText.text = Mathf.Ceil(health) + " / " + Mathf.Ceil(slider.maxValue);
     }
 }

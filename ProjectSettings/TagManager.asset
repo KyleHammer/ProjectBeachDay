@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Projectile
-  - Ground
+  - 
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: GroundLayer
     uniqueID: 1617178237
+    locked: 0
+  - name: Wall
+    uniqueID: 4057403019
     locked: 0
   - name: Default
     uniqueID: 0

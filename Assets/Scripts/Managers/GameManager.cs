@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [SerializeField] private AudioSource music;
     [SerializeField] private AudioSource hitSFX;
     [SerializeField] private AudioSource crabDeathSFX;
 
@@ -27,21 +28,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject GetPlayer()
-    {
-        return player;
-    }
-    
-    public GameObject GetGameUI()
-    {
-        return gameUI;
-    }
-    
+    public GameObject GetPlayer() => player;
+
+    public List<GameObject> GetEnemies() => enemies;
+
+    public GameObject GetGameUI() => gameUI;
+
     // Set from PlayerController Start()
     public void SetPlayer(GameObject newPlayer)
     {
         player = newPlayer;
-        ;
     }
 
     // Set from HealthUI Start()
@@ -60,6 +56,9 @@ public class GameManager : MonoBehaviour
     public void RemoveEnemy(GameObject enemy)
     {
         enemies.Remove(enemy);
+        
+        if(enemies.Count == 0)
+            RoomCleared();
     }
 
     private IEnumerator SetEnemyTarget(GameObject newEnemy)
@@ -69,6 +68,11 @@ public class GameManager : MonoBehaviour
         yield return 0;
 
         newEnemy.GetComponent<IEnemyDamagable>().SetTargetPlayer(player.transform);
+    }
+
+    private void RoomCleared()
+    {
+        Debug.Log("Room Cleared!");
     }
 
     public void PlayAudio(string audioName)

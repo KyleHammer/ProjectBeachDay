@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: e05fbbe509e8ce74abe7dbfcb03029b5, type: 2}
-  maxHealth: 20
+  maxHealth: 3
   moveSpeed: 2
 --- !u!114 &3516717092207138768
 MonoBehaviour:
