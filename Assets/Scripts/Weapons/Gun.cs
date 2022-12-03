@@ -4,13 +4,15 @@ using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
+    [Header("Player Stats")]
+    [SerializeField] private PlayerStatsObject currentStats;
+    [Space]
+    
     [Header("Assign in Inspector")]
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform shotPoint;
     
-    [Header("Projectile Stats")]
     [SerializeField] private float projectileSpeed = 20;
-    [SerializeField] private float damage = 1;
 
     private SpriteRenderer sr;
 
@@ -36,6 +38,11 @@ public class Gun : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
         newProjectile.GetComponent<Rigidbody2D>().velocity = transform.right * projectileSpeed;
-        newProjectile.GetComponent<Projectile>().SetDamage(damage);
+        newProjectile.GetComponent<Projectile>().SetDamage(currentStats.damage);
+    }
+
+    public void IncreaseDamage(float increase)
+    {
+        currentStats.damage += increase;
     }
 }

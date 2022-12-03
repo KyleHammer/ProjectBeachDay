@@ -7,6 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Player Stats")]
+    [SerializeField] private PlayerStatsObject startingStats;
+    [SerializeField] private PlayerStatsObject currentStats;
+    [Space]
+    
+    [SerializeField] private GameObject pickUpReward;
+    [SerializeField] private UpgradeTypeObject[] upgradePool;
+    private UpgradeTypeObject currentRoomUpgrade;
+    
     [SerializeField] private AudioSource music;
     [SerializeField] private AudioSource hitSFX;
     [SerializeField] private AudioSource crabDeathSFX;
@@ -21,6 +30,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this);
+            
+            ResetPlayerStats();
         }
         else
         {
@@ -72,7 +83,29 @@ public class GameManager : MonoBehaviour
 
     private void RoomCleared()
     {
-        Debug.Log("Room Cleared!");
+        if (currentRoomUpgrade != null)
+        {
+            GameObject newPickUp = Instantiate(pickUpReward, Vector2.zero, Quaternion.identity);
+            newPickUp.GetComponent<PickUpScript>().SetValues(currentRoomUpgrade);
+        }
+        
+        Debug.Log("Spawn in exits");
+    }
+
+    public void GameOver()
+    {
+        ResetPlayerStats();
+        player.SetActive(false);
+    }
+
+    private void ResetPlayerStats()
+    {
+        currentStats.damage = startingStats.damage;
+        currentStats.health = startingStats.health;
+        currentStats.speed = startingStats.speed;
+        currentStats.dashDuration = startingStats.dashDuration;
+        currentStats.dashCooldown = startingStats.dashCooldown;
+        currentStats.maxHealth = startingStats.maxHealth;
     }
 
     public void PlayAudio(string audioName)

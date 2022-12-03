@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Player Stats")]
+    [SerializeField] private PlayerStatsObject currentStats;
+    [Space]
+    
     [SerializeField] private float hitInvulnerabilityFrames = 2.5f;
     private float currentInvulnerabilityFrames;
     private SpriteRenderer playerSprite;
     private float flashSpeed = 0.1f;
     private bool isInvulnerable = false;
-
-    [SerializeField] private float maxHealth = 5.0f;
-    private float currentHealth;
 
     private bool isGameOver = false;
     
@@ -23,8 +24,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
-        
-        currentHealth = maxHealth;
         
         SetInvulnerability(true, hitInvulnerabilityFrames);
         
@@ -39,8 +38,8 @@ public class PlayerHealth : MonoBehaviour
         yield return 0;
         
         healthUI = GameManager.Instance.GetGameUI().GetComponentInChildren<HealthUI>();
-        healthUI.SetMaxHealth(maxHealth);
-        healthUI.SetHealth(currentHealth);
+        healthUI.SetMaxHealth(currentStats.maxHealth);
+        healthUI.SetHealth(currentStats.health);
     }
 
     // Update is called once per frame
@@ -73,14 +72,29 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvulnerable || isGameOver) return;
         
-        currentHealth -= damage;
+        currentStats.health -= damage;
         hitSFX.Play();
-        healthUI.SetHealth(currentHealth);
+        healthUI.SetHealth(currentStats.health);
 
-        if (currentHealth <= 0)
+        if (currentStats.health <= 0)
             GameOver();
         else
             SetInvulnerability(true, hitInvulnerabilityFrames);
+    }
+
+    public void IncreaseMaxHealth(float increase)
+    {
+        currentStats.maxHealth += increase;
+
+        healthUI.SetMaxHealth(currentStats.maxHealth);
+        healthUI.SetHealth(currentStats.health);
+    }
+    
+    public void IncreaseHealth(float increase)
+    {
+        currentStats.health += increase;
+        
+        healthUI.SetHealth(currentStats.health);
     }
 
     private void GameOver()
@@ -88,7 +102,7 @@ public class PlayerHealth : MonoBehaviour
         SetInvulnerability(true, 0);
         isGameOver = true;
         
-        Debug.Log("Game Over");
+        GameManager.Instance.GameOver();
     }
 
     public void SetInvulnerability(bool newInvulnerabilityFrames, float invulnerabilityFrames)

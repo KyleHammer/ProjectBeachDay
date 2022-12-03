@@ -7,17 +7,16 @@ using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player Stats")]
+    [SerializeField] private PlayerStatsObject currentStats;
+    [Space]
+    
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprite;
-    
-    [Header("Movement Variables")]
-    [SerializeField] private float moveSpeed = 7f;
-    
-    [Header("Dash Variables")]
+
     [SerializeField] private float dashSpeed = 15f;
-    [SerializeField] private float dashDuration = 0.1f;
-    [SerializeField] private float dashCooldown = 3.0f;
+    
     [SerializeField] private List<TrailRenderer> trailRenderers = new List<TrailRenderer>();
     
     [Header("Sound Effects")]
@@ -39,7 +38,9 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.SetPlayer(this.gameObject);
+        
         DisableTrail();
+        
         gun = GetComponentInChildren<Gun>();
         playerHealth = GetComponent<PlayerHealth>();
         
@@ -54,13 +55,13 @@ public class PlayerController : MonoBehaviour
         yield return 0;
         
         dashUI = GameManager.Instance.GetGameUI().GetComponentInChildren<DashUI>();
-        dashUI.SetMaxDashValue(dashCooldown);
+        dashUI.SetMaxDashValue(currentStats.dashCooldown);
         dashUI.SetDashValue(currentDashCooldown);
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = movementInput * moveSpeed;
+        rb.velocity = movementInput * currentStats.speed;
         
         animator.SetFloat("moveSpeed", rb.velocity.magnitude / 2);
         
@@ -91,13 +92,13 @@ public class PlayerController : MonoBehaviour
             return;
 
         canDash = false;
-        currentDashCooldown = dashCooldown;
-        playerHealth.SetInvulnerability(true, dashDuration + 0.5f);
+        currentDashCooldown = currentStats.dashCooldown;
+        playerHealth.SetInvulnerability(true, currentStats.dashDuration + 0.5f);
         
         EnableTrail();
             
         dashDirection = movementInput.normalized;
-        dashTime = dashDuration;
+        dashTime = currentStats.dashDuration;
             
         if(!dashSFX.isPlaying)
         {

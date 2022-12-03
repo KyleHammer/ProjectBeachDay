@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3417901411282741223
 MonoBehaviour:
@@ -47,6 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b87501f314016149bfe70f0ecaa242f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingStats: {fileID: 11400000, guid: 8e8f615e6a16b5d4eba2221e8c39029f, type: 2}
+  currentStats: {fileID: 11400000, guid: c8940b6a809526d4f8344e50257eaa3a, type: 2}
+  pickUpReward: {fileID: 7302638273953116497, guid: 04ce0105e365b174b8a4647f998c86d4, type: 3}
+  upgradePool:
+  - {fileID: 11400000, guid: 84b6732634d9d6e449e13f9a8384dab4, type: 2}
+  - {fileID: 11400000, guid: 3161ac4a486d59549ae9122de4271f60, type: 2}
+  - {fileID: 11400000, guid: be5f1c8071af3554e826715e3ad57ed6, type: 2}
+  - {fileID: 11400000, guid: 1a9794e0a5ca5b44293f167b1479ef1d, type: 2}
+  - {fileID: 11400000, guid: 2e02f6e0ad6e5df45ace9c141048f93f, type: 2}
+  - {fileID: 11400000, guid: 0002f7cfef719044e85ca88ad132b54c, type: 2}
   music: {fileID: 7334108851894866449}
   hitSFX: {fileID: 4478302287494130753}
   crabDeathSFX: {fileID: 1681277058}
