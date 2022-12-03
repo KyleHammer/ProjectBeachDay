@@ -18,9 +18,13 @@ public class GameManager : MonoBehaviour
     public string[] scenePool;
     private List<GameObject> nextRoomInteractables = new List<GameObject>();
     
+    private int score = 0;
+    [SerializeField] private int scoreIncrease = 100;
+    
     [SerializeField] private AudioSource music;
     [SerializeField] private AudioSource hitSFX;
-    [SerializeField] private AudioSource crabDeathSFX;
+    [SerializeField] private AudioSource enemyDeathSFX;
+    [SerializeField] private AudioSource playerDeathSFX;
 
     private GameObject player;
     private GameObject gameUI;
@@ -46,6 +50,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> GetEnemies() => enemies;
 
     public GameObject GetGameUI() => gameUI;
+
+    public int GetScore() => score;
 
     // Set from PlayerController Start()
     public void SetPlayer(GameObject newPlayer)
@@ -99,7 +105,11 @@ public class GameManager : MonoBehaviour
 
     private void RoomCleared()
     {
-        // Give reward
+        // Give score reward
+        score += scoreIncrease;
+        gameUI.GetComponentInChildren<ScoreUI>().UpdateScore(score);
+        
+        // Give upgrade reward
         if (currentRoomUpgrade != null)
         {
             GameObject newPickUp = Instantiate(pickUpReward, Vector2.zero, Quaternion.identity);
@@ -115,6 +125,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        playerDeathSFX.Play();
         ResetPlayerStats();
         player.SetActive(false);
     }
@@ -136,8 +147,8 @@ public class GameManager : MonoBehaviour
             case "BasicHit":
                 hitSFX.Play();
                 break;
-            case "CrabDeath":
-                crabDeathSFX.Play();
+            case "Death":
+                enemyDeathSFX.Play();
                 break;
             default:
                 Debug.LogError("No sound effect for " + audioName);

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ad1da6f5275ed4fa9029ced96d9582, type: 3}
   m_Name: DefaultPlayerStatsObject
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  health: 5
+  maxHealth: 3
+  health: 3
   damage: 1
-  dashRegen: 3
+  dashCooldown: 3
   dashDuration: 0.1
   speed: 5

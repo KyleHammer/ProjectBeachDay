@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class IEnemyDamagable : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     [SerializeField] private Material flashMaterial;
     private Material defaultMaterial;
     private float flashDuration = 0.1f;
@@ -32,7 +32,7 @@ public class IEnemyDamagable : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         FlashUpdate();
     }
@@ -56,7 +56,7 @@ public class IEnemyDamagable : MonoBehaviour
         {
             GameManager.Instance.RemoveEnemy(this.gameObject);
             GameManager.Instance.PlayAudio("BasicHit");
-            GameManager.Instance.PlayAudio("CrabDeath");
+            GameManager.Instance.PlayAudio("Death");
             Destroy(gameObject);
         }
     }
