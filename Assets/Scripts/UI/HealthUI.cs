@@ -6,7 +6,7 @@ public class HealthUI : MonoBehaviour
 {
     private Slider slider;
 
-    private void Awake()
+    private void Start()
     {
         GameManager.Instance.SetGameUI(transform.parent.gameObject);
         slider = GetComponent<Slider>();

@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -20,14 +22,25 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthUI = GameManager.Instance.GetGameUI().GetComponentInChildren<HealthUI>();
         playerSprite = GetComponent<SpriteRenderer>();
         
         currentHealth = maxHealth;
-        healthUI.SetMaxHealth(maxHealth);
-        healthUI.SetHealth(currentHealth);
         
         SetInvulnerability(true);
+        
+        StartCoroutine(LateStart());
+    }
+
+    // gameUI is assigned in start
+    // So healthUI needs to get gameUI after it has been assigned (through LateStart)
+    private IEnumerator LateStart()
+    {
+        // Wait 1 frame after being called
+        yield return 0;
+        
+        healthUI = GameManager.Instance.GetGameUI().GetComponentInChildren<HealthUI>();
+        healthUI.SetMaxHealth(maxHealth);
+        healthUI.SetHealth(currentHealth);
     }
 
     // Update is called once per frame

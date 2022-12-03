@@ -32,14 +32,10 @@ public class PlayerController : MonoBehaviour
     private bool movementEnabled = true;
     private Vector2 movementInput = Vector2.zero;
     private Gun gun;
-
-    private void Awake()
-    {
-        GameManager.Instance.SetPlayer(this.gameObject);
-    }
-
+    
     private void Start()
     {
+        GameManager.Instance.SetPlayer(this.gameObject);
         DisableTrail();
         gun = GetComponentInChildren<Gun>();
     }

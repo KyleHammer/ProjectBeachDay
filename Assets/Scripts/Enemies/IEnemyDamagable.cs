@@ -13,11 +13,15 @@ public class IEnemyDamagable : MonoBehaviour
     
     [SerializeField] private float maxHealth = 10f;
     private float currentHealth = 0;
+    
+    protected Transform playerTransfrom;
 
     private AudioSource hitSFX;
 
     protected virtual void Start()
     {
+        GameManager.Instance.AddEnemy(this.gameObject);
+        
         hitSFX = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultMaterial = spriteRenderer.material;
@@ -28,6 +32,11 @@ public class IEnemyDamagable : MonoBehaviour
     private void Update()
     {
         FlashUpdate();
+    }
+    
+    public void SetTargetPlayer(Transform newPlayerTransform)
+    {
+        playerTransfrom = newPlayerTransform;
     }
 
     public void TakeDamage(float damageTaken)
@@ -42,6 +51,7 @@ public class IEnemyDamagable : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.RemoveEnemy(this.gameObject);
             GameManager.Instance.PlayAudio("BasicHit");
             GameManager.Instance.PlayAudio("CrabDeath");
             Destroy(gameObject);
