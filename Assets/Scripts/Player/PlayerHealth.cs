@@ -101,6 +101,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void GameOver()
     {
+        healthUI.SetHealth(0);
         SetInvulnerability(true, 0);
         isGameOver = true;
         

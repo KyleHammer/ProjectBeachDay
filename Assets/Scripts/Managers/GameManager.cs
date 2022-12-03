@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Player Stats")]
+    [Header("All Stats")]
     [SerializeField] private PlayerStatsObject startingStats;
     [SerializeField] private PlayerStatsObject currentStats;
+    [SerializeField] private EnemyStatsObject defaultEnemyStats;
+    [SerializeField] private EnemyStatsObject currentEnemyStats;
+    [SerializeField] private EnemyStatsObject enemyScalingFactor;
     [Space]
     
     [SerializeField] private GameObject pickUpReward;
     public UpgradeTypeObject[] upgradePool;
     public UpgradeTypeObject currentRoomUpgrade;
+    
     public string[] scenePool;
     private List<GameObject> nextRoomInteractables = new List<GameObject>();
-    
+
     private int score = 0;
     [SerializeField] private int scoreIncrease = 100;
     
@@ -37,7 +40,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
             
-            ResetPlayerStats();
+            ResetAllStats();
         }
         else
         {
@@ -77,6 +80,13 @@ public class GameManager : MonoBehaviour
     public void ClearRoomInteractables()
     {
         nextRoomInteractables.Clear();
+    }
+
+    public void IncreaseDifficulty()
+    {
+        currentEnemyStats.damageScaling += enemyScalingFactor.damageScaling;
+        currentEnemyStats.healthScaling += enemyScalingFactor.healthScaling;
+        currentEnemyStats.speedScaling += enemyScalingFactor.speedScaling;
     }
     
     // Set in each enemies Start()
@@ -126,11 +136,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         playerDeathSFX.Play();
-        ResetPlayerStats();
+        ResetAllStats();
         player.SetActive(false);
     }
 
-    private void ResetPlayerStats()
+    private void ResetAllStats()
     {
         currentStats.damage = startingStats.damage;
         currentStats.health = startingStats.health;
@@ -138,6 +148,10 @@ public class GameManager : MonoBehaviour
         currentStats.dashDuration = startingStats.dashDuration;
         currentStats.dashCooldown = startingStats.dashCooldown;
         currentStats.maxHealth = startingStats.maxHealth;
+
+        currentEnemyStats.damageScaling = defaultEnemyStats.damageScaling;
+        currentEnemyStats.healthScaling = defaultEnemyStats.healthScaling;
+        currentEnemyStats.speedScaling = defaultEnemyStats.speedScaling;
     }
 
     public void PlayAudio(string audioName)

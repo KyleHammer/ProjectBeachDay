@@ -31,7 +31,11 @@ public class NextRoomInteractable : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             GameManager.Instance.ClearRoomInteractables();
+            
             GameManager.Instance.currentRoomUpgrade = upgradeTypeObject;
+
+            GameManager.Instance.IncreaseDifficulty();
+            
             SceneManager.LoadScene(sceneName);
         }
     }

@@ -10,7 +10,8 @@ public class DashingUnit : IEnemyDamagable
     protected override void Start()
     {
         base.Start();
-        currentDashCooldown = dashCooldown;
+        
+        currentDashCooldown = dashCooldown / stats.speedScaling;
     }
 
     protected override void Update()

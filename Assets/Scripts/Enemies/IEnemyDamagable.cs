@@ -11,6 +11,7 @@ public class IEnemyDamagable : MonoBehaviour
     private float flashDuration = 0.1f;
     private float currentFlashDuration = 0;
     
+    [SerializeField] protected EnemyStatsObject stats;
     [SerializeField] private float maxHealth = 10f;
     private float currentHealth = 0;
 
@@ -29,7 +30,7 @@ public class IEnemyDamagable : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultMaterial = spriteRenderer.material;
 
-        currentHealth = maxHealth;
+        currentHealth = maxHealth * stats.healthScaling;
     }
 
     protected virtual void Update()

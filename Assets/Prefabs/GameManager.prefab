@@ -50,6 +50,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingStats: {fileID: 11400000, guid: 8e8f615e6a16b5d4eba2221e8c39029f, type: 2}
   currentStats: {fileID: 11400000, guid: c8940b6a809526d4f8344e50257eaa3a, type: 2}
+  defaultEnemyStats: {fileID: 11400000, guid: f3c6073b8600e41468e512caef8b0a39, type: 2}
+  currentEnemyStats: {fileID: 11400000, guid: 221964b03c6b60d40ab06f9bd89846c8, type: 2}
+  enemyScalingFactor: {fileID: 11400000, guid: 3bfdbb3cb29dba24592caf6e0cc92c2d, type: 2}
   pickUpReward: {fileID: 7302638273953116497, guid: 04ce0105e365b174b8a4647f998c86d4, type: 3}
   upgradePool:
   - {fileID: 11400000, guid: 84b6732634d9d6e449e13f9a8384dab4, type: 2}

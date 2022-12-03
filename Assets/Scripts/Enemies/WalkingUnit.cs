@@ -9,7 +9,7 @@ public class WalkingUnit : IEnemyDamagable
     {
         if (playerTransfrom != null)
         {
-            float step =  moveSpeed * Time.deltaTime;
+            float step =  moveSpeed * stats.speedScaling * Time.deltaTime;
 
             Vector2 direction = Vector2.ClampMagnitude(playerTransfrom.position - transform.position, 1);
             

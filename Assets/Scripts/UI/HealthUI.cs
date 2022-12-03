@@ -22,6 +22,6 @@ public class HealthUI : MonoBehaviour
     public void SetHealth(float health)
     {
         slider.value = health;
-        hpText.text = Mathf.Ceil(health) + " / " + Mathf.Ceil(slider.maxValue);
+        hpText.text = health + " / " + slider.maxValue;
     }
 }

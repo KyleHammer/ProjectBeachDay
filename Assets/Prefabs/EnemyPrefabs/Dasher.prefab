@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: e05fbbe509e8ce74abe7dbfcb03029b5, type: 2}
+  stats: {fileID: 11400000, guid: 221964b03c6b60d40ab06f9bd89846c8, type: 2}
   maxHealth: 3
   dashCooldown: 2
   dashForce: 200
@@ -250,4 +251,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61572f2d2b662d340ad10407eded7434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 221964b03c6b60d40ab06f9bd89846c8, type: 2}
   damage: 1
