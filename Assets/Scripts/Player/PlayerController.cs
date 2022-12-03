@@ -172,6 +172,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             dashTime -= Time.deltaTime;
+            
+            dashDirection = movementInput.normalized;
+            
             rb.velocity = dashDirection * dashSpeed;
         }
     }

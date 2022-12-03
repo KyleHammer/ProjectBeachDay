@@ -15,3 +15,4 @@ MonoBehaviour:
   upgradeName: speed
   upgradeIncrease: 1
   upgradeSprite: {fileID: 21300000, guid: 4b448ca76262eeb47b24a92b271df466, type: 3}
+  flavorText: Increase speed by

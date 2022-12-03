@@ -15,3 +15,4 @@ MonoBehaviour:
   upgradeName: health
   upgradeIncrease: 1
   upgradeSprite: {fileID: 21300000, guid: 464e277aae444774183f99b79ba28b92, type: 3}
+  flavorText: Heal

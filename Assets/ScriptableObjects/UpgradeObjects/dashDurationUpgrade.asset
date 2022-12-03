@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: dashDurationUpgrade
   m_EditorClassIdentifier: 
   upgradeName: dashDuration
-  upgradeIncrease: 1
+  upgradeIncrease: 0.05
   upgradeSprite: {fileID: 21300000, guid: fb408daca4f060b45b731d13e95af3e1, type: 3}
+  flavorText: Increase dash duration by

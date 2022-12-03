@@ -57,6 +57,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a9794e0a5ca5b44293f167b1479ef1d, type: 2}
   - {fileID: 11400000, guid: 2e02f6e0ad6e5df45ace9c141048f93f, type: 2}
   - {fileID: 11400000, guid: 0002f7cfef719044e85ca88ad132b54c, type: 2}
+  scenePool:
+  - Room1
+  - Room2
   music: {fileID: 7334108851894866449}
   hitSFX: {fileID: 4478302287494130753}
   crabDeathSFX: {fileID: 1681277058}

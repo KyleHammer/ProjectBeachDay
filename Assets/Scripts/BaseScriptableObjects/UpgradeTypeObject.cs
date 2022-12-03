@@ -6,4 +6,5 @@ public class UpgradeTypeObject : ScriptableObject
     public string upgradeName;
     public float upgradeIncrease;
     public Sprite upgradeSprite;
+    public string flavorText;
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +13,10 @@ public class GameManager : MonoBehaviour
     [Space]
     
     [SerializeField] private GameObject pickUpReward;
-    [SerializeField] private UpgradeTypeObject[] upgradePool;
-    private UpgradeTypeObject currentRoomUpgrade;
+    public UpgradeTypeObject[] upgradePool;
+    public UpgradeTypeObject currentRoomUpgrade;
+    public string[] scenePool;
+    private List<GameObject> nextRoomInteractables = new List<GameObject>();
     
     [SerializeField] private AudioSource music;
     [SerializeField] private AudioSource hitSFX;
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
@@ -55,6 +57,20 @@ public class GameManager : MonoBehaviour
     public void SetGameUI(GameObject newGameUI)
     {
         gameUI = newGameUI;
+    }
+    
+    // Set in each NextRoomInteractable Start()
+    public void AddNextRoomInteractable(GameObject newExit)
+    {
+        nextRoomInteractables.Add(newExit);
+        
+        // Hide the exit
+        newExit.SetActive(false);
+    }
+
+    public void ClearRoomInteractables()
+    {
+        nextRoomInteractables.Clear();
     }
     
     // Set in each enemies Start()
@@ -83,13 +99,18 @@ public class GameManager : MonoBehaviour
 
     private void RoomCleared()
     {
+        // Give reward
         if (currentRoomUpgrade != null)
         {
             GameObject newPickUp = Instantiate(pickUpReward, Vector2.zero, Quaternion.identity);
             newPickUp.GetComponent<PickUpScript>().SetValues(currentRoomUpgrade);
         }
         
-        Debug.Log("Spawn in exits");
+        // Show next rooms
+        foreach (GameObject exit in nextRoomInteractables)
+        {
+            exit.SetActive(true);
+        }
     }
 
     public void GameOver()

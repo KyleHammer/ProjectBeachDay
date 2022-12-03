@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 115200a01382a7c4f8eeb9c3e0e9b60f, type: 3}
-  m_Name: dashRegenUpgrade
+  m_Name: dashCooldownUpgrade
   m_EditorClassIdentifier: 
-  upgradeName: dashRegen
-  upgradeIncrease: 1
+  upgradeName: dashCooldown
+  upgradeIncrease: 1.2
   upgradeSprite: {fileID: 21300000, guid: d21655749e05f9c458a4d9e4aae3ee59, type: 3}
+  flavorText: Decrease dash cooldown by

@@ -15,3 +15,4 @@ MonoBehaviour:
   upgradeName: damage
   upgradeIncrease: 1
   upgradeSprite: {fileID: 21300000, guid: 6762c5b13122fa447b70d2a4b527e4ba, type: 3}
+  flavorText: Increase damage by
