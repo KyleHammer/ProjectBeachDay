@@ -13,6 +13,10 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform shotPoint;
     
     [SerializeField] private float projectileSpeed = 20;
+    
+    [SerializeField] private float fireRateCooldown = 0.4f;
+    private float currentCooldown = 0f;
+    private bool canShoot = true;
 
     private SpriteRenderer sr;
 
@@ -25,15 +29,33 @@ public class Gun : MonoBehaviour
     {
         SetGunDirection();
         SetSpriteDirection();
+        CooldownUpdate();
+    }
+
+    private void CooldownUpdate()
+    {
+        if (currentCooldown > 0)
+        {
+            currentCooldown -= Time.deltaTime;
+
+            if (currentCooldown <= 0)
+            {
+                canShoot = true;
+            }
+        }
     }
 
     public void Shoot()
     {
+        if (!canShoot) return;
+        
+        canShoot = false;
+        currentCooldown = fireRateCooldown;
+        
         GameObject newProjectile = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
-        Debug.Log("Bang");
-        
+
         // TODO: Implement bullet movement
-        
+
         // Set the projectile velocity
 
         // Set the projectile damage
