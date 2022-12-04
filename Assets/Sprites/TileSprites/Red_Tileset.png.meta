@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,7 +71,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 3
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -5492,8 +5492,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Red_Tileset_204: 1683125124
-      Red_Tileset_226: -63869882
+      Red_Tileset_68: -414687016
+      Red_Tileset_150: 548385533
       Red_Tileset_217: -377232106
       Red_Tileset_90: -1488422514
       Red_Tileset_49: -1119144684
@@ -5559,10 +5559,10 @@ TextureImporter:
       Red_Tileset_180: -130577495
       Red_Tileset_241: -1608599224
       Red_Tileset_63: 1721489182
-      Red_Tileset_209: -530305944
-      Red_Tileset_20: -149395149
-      Red_Tileset_140: -111393228
       Red_Tileset_59: -1387082850
+      Red_Tileset_209: -530305944
+      Red_Tileset_140: -111393228
+      Red_Tileset_20: -149395149
       Red_Tileset_100: 1097188390
       Red_Tileset_248: -1518591438
       Red_Tileset_48: 503276879
@@ -5746,8 +5746,8 @@ TextureImporter:
       Red_Tileset_139: -2038808984
       Red_Tileset_77: -2142616220
       Red_Tileset_161: 168349642
-      Red_Tileset_68: -414687016
-      Red_Tileset_150: 548385533
+      Red_Tileset_204: 1683125124
+      Red_Tileset_226: -63869882
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

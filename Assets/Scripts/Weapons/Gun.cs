@@ -35,10 +35,8 @@ public class Gun : MonoBehaviour
         // TODO: Implement bullet movement
         
         // Set the projectile velocity
-        // newProjectile.GetComponent<Rigidbody2D>().velocity = transform.right * projectileSpeed;
-        
+
         // Set the projectile damage
-        // newProjectile.GetComponent<Projectile>().SetDamage(currentStats.damage);
     }
 
     private void SetGunDirection()
@@ -46,17 +44,14 @@ public class Gun : MonoBehaviour
         // TODO: Implement gun rotation
         
         // Find the mouse position on the screen
-        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        
+
         // Get the position of the gun
-        //Vector2 weaponPosition = transform.position;
-        
+
         // Get the direction the bullet needs to go (end point - start point)
-        //Vector2 direction = mousePosition - weaponPosition;
-        
+
         // Set the gun transform's right side to the direction
         // This is because the gun faces right by default
-        // transform.right = direction;
+        
     }
 
     private void SetSpriteDirection()
