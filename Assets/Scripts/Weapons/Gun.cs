@@ -13,6 +13,10 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform shotPoint;
     
     [SerializeField] private float projectileSpeed = 20;
+    
+    [SerializeField] private float fireRateCooldown = 0.4f;
+    private float currentCooldown = 0f;
+    private bool canShoot = true;
 
     private SpriteRenderer sr;
 
@@ -23,11 +27,34 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
+        SetGunDirection();
+        SetSpriteDirection();
+        CooldownUpdate();
+    }
+
+    private void CooldownUpdate()
+    {
+        if (currentCooldown > 0)
+        {
+            currentCooldown -= Time.deltaTime;
+
+            if (currentCooldown <= 0)
+            {
+                canShoot = true;
+            }
+        }
+    }
+
+    private void SetGunDirection()
+    {
         Vector2 weaponPosition = transform.position;
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = mousePosition - weaponPosition;
         transform.right = direction;
-        
+    }
+    
+    private void SetSpriteDirection()
+    {
         if (transform.localRotation.z > 0.7 || transform.localRotation.z < -0.7)
             sr.flipY = true;
         else
@@ -36,7 +63,13 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
+        if (!canShoot) return;
+        
+        canShoot = false;
+        currentCooldown = fireRateCooldown;
+        
         GameObject newProjectile = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+        
         newProjectile.GetComponent<Rigidbody2D>().velocity = transform.right * projectileSpeed;
         newProjectile.GetComponent<Projectile>().SetDamage(currentStats.damage);
     }

@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput = Vector2.zero;
     private Gun gun;
     
+    private bool shootButtonHeld = false;
+    
     private void Start()
     {
         GameManager.Instance.SetPlayer(this.gameObject);
@@ -56,6 +58,11 @@ public class PlayerController : MonoBehaviour
         dashUI = GameManager.Instance.GetGameUI().GetComponentInChildren<DashUI>();
         dashUI.SetMaxDashValue(currentStats.dashCooldown);
         dashUI.SetDashValue(currentDashCooldown);
+    }
+    
+    private void Update()
+    {
+        CheckShootButton();
     }
 
     private void FixedUpdate()
@@ -116,11 +123,17 @@ public class PlayerController : MonoBehaviour
     public void Shoot(InputAction.CallbackContext context)
     {
         if (context.performed)
-        {
-            gun.Shoot();
-        }
+            shootButtonHeld = true;
+        if (context.canceled)
+            shootButtonHeld = false;
     }
-
+    
+    private void CheckShootButton()
+    {
+        if (shootButtonHeld)
+            gun.Shoot();
+    }
+    
     public void EnableMovement()
     {
         movementEnabled = true;

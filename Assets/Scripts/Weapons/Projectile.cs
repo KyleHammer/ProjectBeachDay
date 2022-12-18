@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.transform.CompareTag("Hole")) return;
+        if (col.transform.CompareTag("Hole") || col.transform.CompareTag("Projectile")) return;
         
         if (col.transform.CompareTag("Player"))
         {
