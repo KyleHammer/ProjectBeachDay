@@ -152,6 +152,8 @@ public class PlayerController : MonoBehaviour
         
         movementEnabled = false;
         shootingEnabled = false;
+        shootButtonHeld = false;
+        
     }
 
     public void EnableTrail()
