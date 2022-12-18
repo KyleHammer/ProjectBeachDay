@@ -143,7 +143,10 @@ public class GameManager : MonoBehaviour
     {
         playerDeathSFX.Play();
         ResetAllStats();
-        player.SetActive(false);
+        
+        //player.SetActive(false);
+        player.GetComponent<PlayerController>().DisableMovementShootingAndSprite();
+            
         enemies.Clear();
         
         gameOverScreen.SetActive(true);

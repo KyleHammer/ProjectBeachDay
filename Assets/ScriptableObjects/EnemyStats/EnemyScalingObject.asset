@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnemyScalingObject
   m_EditorClassIdentifier: 
   speedScaling: 0.2
-  healthScaling: 0.2
-  damageScaling: 0.2
+  healthScaling: 0.1
+  damageScaling: 0.1

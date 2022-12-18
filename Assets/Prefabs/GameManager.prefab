@@ -71,7 +71,6 @@ MonoBehaviour:
   - Room6
   - Room7
   - Room8
-  - StartScene
   scoreIncrease: 100
   music: {fileID: 7334108851894866449}
   hitSFX: {fileID: 4478302287494130753}

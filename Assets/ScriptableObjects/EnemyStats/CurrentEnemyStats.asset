@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d55c8b0cddbf6498e7d5a4473ea136, type: 3}
   m_Name: CurrentEnemyStats
   m_EditorClassIdentifier: 
-  speedScaling: 2
-  healthScaling: 2
-  damageScaling: 2
+  speedScaling: 100
+  healthScaling: 1.8000002
+  damageScaling: 1.8000002

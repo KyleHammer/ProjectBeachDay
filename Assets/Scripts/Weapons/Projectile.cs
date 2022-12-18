@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     public ParticleSystem trailParticle;
 
     private float damage = 1f;
-    private float bulletLifetime = 2.0f;
+    private float bulletLifetime = 4.0f;
 
     private float destroyDelay = 2.0f;
     
@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
     {
         bulletLifetime -= Time.deltaTime;
         if(bulletLifetime < 0)
-            Destroy(this.gameObject);
+            RemoveProjectile();
     }
 
     private void OnTriggerEnter2D(Collider2D col)

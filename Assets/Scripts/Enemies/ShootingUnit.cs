@@ -18,7 +18,8 @@ public class ShootingUnit : IEnemyDamagable
     {
         base.Start();
         
-        currentShootingCooldown = shootingCooldown / stats.speedScaling;
+        shootingCooldown /= stats.speedScaling;
+        currentShootingCooldown = shootingCooldown;
     }
 
     // Update is called once per frame

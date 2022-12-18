@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private PlayerHealth playerHealth;
 
     private bool movementEnabled = true;
+    private bool shootingEnabled = true;
     private Vector2 movementInput = Vector2.zero;
     private Gun gun;
     
@@ -122,6 +123,9 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
+        if (!shootingEnabled)
+            return;
+        
         if (context.performed)
             shootButtonHeld = true;
         if (context.canceled)
@@ -139,12 +143,15 @@ public class PlayerController : MonoBehaviour
         movementEnabled = true;
     }
     
-    public void DisableMovement()
+    public void DisableMovementShootingAndSprite()
     {
         rb.velocity = Vector2.zero;
         movementInput = Vector2.zero;
+
+        sprite.enabled = false;
         
         movementEnabled = false;
+        shootingEnabled = false;
     }
 
     public void EnableTrail()
