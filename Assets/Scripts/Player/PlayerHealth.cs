@@ -92,9 +92,10 @@ public class PlayerHealth : MonoBehaviour
     
     public void IncreaseHealth(float increase)
     {
-        if (currentStats.health + increase > currentStats.maxHealth) return;
-        
         currentStats.health += increase;
+
+        if (currentStats.health > currentStats.maxHealth)
+            currentStats.health = currentStats.maxHealth;
         
         healthUI.SetHealth(currentStats.health);
     }
