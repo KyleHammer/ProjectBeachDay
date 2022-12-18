@@ -1265,6 +1265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStats: {fileID: 11400000, guid: c8940b6a809526d4f8344e50257eaa3a, type: 2}
-  projectile: {fileID: 8116953084194565090, guid: 924a636c11314e44d945df76f33491c8, type: 3}
+  projectile: {fileID: 6947101458622173096, guid: 175a3a6e1a9859c4e88b436a50ccea07, type: 3}
   shotPoint: {fileID: 7096202944073713479}
   projectileSpeed: 20
+  fireRateCooldown: 0.4
