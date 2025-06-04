@@ -3,7 +3,7 @@ guid: 54ed7d3a7467cfd4091fac7bd7ca4bb8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -25,7 +25,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -65,6 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -76,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -88,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -100,6 +103,46 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: PS5
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1817,87 +1860,87 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Beach_Tileset_63: 1728190620
-      Beach_Tileset_31: -1815142212
-      Beach_Tileset_72: -1375421524
-      Beach_Tileset_57: -1060454454
-      Beach_Tileset_17: -1054037216
-      Beach_Tileset_58: -1766175422
-      Beach_Tileset_30: -1801074624
-      Beach_Tileset_36: 787152056
-      Beach_Tileset_76: 921580766
-      Beach_Tileset_56: -858607231
+      Beach_Tileset_0: 2077057608
+      Beach_Tileset_1: -472958950
+      Beach_Tileset_10: -231778993
       Beach_Tileset_11: 1979894978
-      Beach_Tileset_50: -77896882
-      Beach_Tileset_61: 2059249907
-      Beach_Tileset_22: -1626183418
-      Beach_Tileset_20: -1176698943
-      Beach_Tileset_49: -953635559
-      Beach_Tileset_70: -1051780231
-      Beach_Tileset_77: -251339809
-      Beach_Tileset_26: 995088159
-      Beach_Tileset_66: -107006658
-      Beach_Tileset_65: 1916582412
-      Beach_Tileset_51: -1892664566
-      Beach_Tileset_32: -810749218
-      Beach_Tileset_53: 566815442
-      Beach_Tileset_44: 2120992893
-      Beach_Tileset_48: -700746598
-      Beach_Tileset_64: 774736434
-      Beach_Tileset_33: -1105749715
       Beach_Tileset_12: 688462766
-      Beach_Tileset_4: -760546421
-      Beach_Tileset_34: -1777738713
-      Beach_Tileset_45: -114061157
-      Beach_Tileset_52: -1303342603
-      Beach_Tileset_27: -1015721421
-      Beach_Tileset_25: 535174222
-      Beach_Tileset_37: 964607899
-      Beach_Tileset_6: -1927988099
-      Beach_Tileset_3: 207998553
-      Beach_Tileset_28: -1910676173
-      Beach_Tileset_35: -813189863
-      Beach_Tileset_68: 672223082
-      Beach_Tileset_42: 1340562920
-      Beach_Tileset_14: -1233629460
-      Beach_Tileset_47: 1084944352
-      Beach_Tileset_7: 874197863
-      Beach_Tileset_41: 1089666054
       Beach_Tileset_13: -1268154458
-      Beach_Tileset_43: 470658793
-      Beach_Tileset_18: 1062718970
-      Beach_Tileset_69: 174015732
-      Beach_Tileset_21: -1967785724
-      Beach_Tileset_60: 1395275959
-      Beach_Tileset_2: -474376195
-      Beach_Tileset_59: 1452446214
-      Beach_Tileset_75: 91824152
-      Beach_Tileset_54: -1889058221
+      Beach_Tileset_14: -1233629460
       Beach_Tileset_15: 847446355
       Beach_Tileset_16: -496694666
-      Beach_Tileset_40: -1987464212
-      Beach_Tileset_80: 1943762529
-      Beach_Tileset_5: -2055977004
-      Beach_Tileset_73: 1498982440
-      Beach_Tileset_0: 2077057608
-      Beach_Tileset_62: 1260547525
-      Beach_Tileset_74: 460683750
-      Beach_Tileset_8: 2117566947
-      Beach_Tileset_46: 851906021
-      Beach_Tileset_67: 306439798
-      Beach_Tileset_39: 285326305
-      Beach_Tileset_10: -231778993
-      Beach_Tileset_71: 404219292
-      Beach_Tileset_79: -838497721
-      Beach_Tileset_38: 554366189
-      Beach_Tileset_29: -654595639
-      Beach_Tileset_55: -667506779
-      Beach_Tileset_23: 1620260713
-      Beach_Tileset_9: 1765291094
-      Beach_Tileset_1: -472958950
+      Beach_Tileset_17: -1054037216
+      Beach_Tileset_18: 1062718970
       Beach_Tileset_19: 746139096
+      Beach_Tileset_2: -474376195
+      Beach_Tileset_20: -1176698943
+      Beach_Tileset_21: -1967785724
+      Beach_Tileset_22: -1626183418
+      Beach_Tileset_23: 1620260713
+      Beach_Tileset_25: 535174222
+      Beach_Tileset_26: 995088159
+      Beach_Tileset_27: -1015721421
+      Beach_Tileset_28: -1910676173
+      Beach_Tileset_29: -654595639
+      Beach_Tileset_3: 207998553
+      Beach_Tileset_30: -1801074624
+      Beach_Tileset_31: -1815142212
+      Beach_Tileset_32: -810749218
+      Beach_Tileset_33: -1105749715
+      Beach_Tileset_34: -1777738713
+      Beach_Tileset_35: -813189863
+      Beach_Tileset_36: 787152056
+      Beach_Tileset_37: 964607899
+      Beach_Tileset_38: 554366189
+      Beach_Tileset_39: 285326305
+      Beach_Tileset_4: -760546421
+      Beach_Tileset_40: -1987464212
+      Beach_Tileset_41: 1089666054
+      Beach_Tileset_42: 1340562920
+      Beach_Tileset_43: 470658793
+      Beach_Tileset_44: 2120992893
+      Beach_Tileset_45: -114061157
+      Beach_Tileset_46: 851906021
+      Beach_Tileset_47: 1084944352
+      Beach_Tileset_48: -700746598
+      Beach_Tileset_49: -953635559
+      Beach_Tileset_5: -2055977004
+      Beach_Tileset_50: -77896882
+      Beach_Tileset_51: -1892664566
+      Beach_Tileset_52: -1303342603
+      Beach_Tileset_53: 566815442
+      Beach_Tileset_54: -1889058221
+      Beach_Tileset_55: -667506779
+      Beach_Tileset_56: -858607231
+      Beach_Tileset_57: -1060454454
+      Beach_Tileset_58: -1766175422
+      Beach_Tileset_59: 1452446214
+      Beach_Tileset_6: -1927988099
+      Beach_Tileset_60: 1395275959
+      Beach_Tileset_61: 2059249907
+      Beach_Tileset_62: 1260547525
+      Beach_Tileset_63: 1728190620
+      Beach_Tileset_64: 774736434
+      Beach_Tileset_65: 1916582412
+      Beach_Tileset_66: -107006658
+      Beach_Tileset_67: 306439798
+      Beach_Tileset_68: 672223082
+      Beach_Tileset_69: 174015732
+      Beach_Tileset_7: 874197863
+      Beach_Tileset_70: -1051780231
+      Beach_Tileset_71: 404219292
+      Beach_Tileset_72: -1375421524
+      Beach_Tileset_73: 1498982440
+      Beach_Tileset_74: 460683750
+      Beach_Tileset_75: 91824152
+      Beach_Tileset_76: 921580766
+      Beach_Tileset_77: -251339809
       Beach_Tileset_78: 647085402
-  spritePackingTag: 
+      Beach_Tileset_79: -838497721
+      Beach_Tileset_8: 2117566947
+      Beach_Tileset_80: 1943762529
+      Beach_Tileset_9: 1765291094
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
