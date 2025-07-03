@@ -66,6 +66,7 @@ MonoBehaviour:
   - Room1
   - Room2
   - Room3
+  - Room4
   - StartScene
   scoreIncrease: 100
   music: {fileID: 7334108851894866449}
