@@ -49,6 +49,7 @@ public class PlayerUpgrades : MonoBehaviour
     private void IncreaseMaxHealth(float increase)
     {
         playerHealth.IncreaseMaxHealth(increase);
+        playerHealth.IncreaseHealth(increase);
     }
 
     private void RegenHealth(float increase)

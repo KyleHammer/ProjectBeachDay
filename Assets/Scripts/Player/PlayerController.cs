@@ -147,6 +147,13 @@ public class PlayerController : MonoBehaviour
         movementEnabled = false;
     }
 
+    // Implement EnableGun if necessary (e.g. player reviving in level)
+
+    public void DisableGun()
+    {
+        gun.SetGunEnabled(false);
+    }
+
     public void EnableTrail()
     {
         foreach (var trail in trailRenderers)

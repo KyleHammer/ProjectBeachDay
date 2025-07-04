@@ -143,10 +143,21 @@ public class GameManager : MonoBehaviour
     {
         playerDeathSFX.Play();
         ResetAllStats();
-        player.SetActive(false);
+        DisablePlayer();
         enemies.Clear();
         
         gameOverScreen.SetActive(true);
+    }
+
+    private void DisablePlayer()
+    {
+        //player.SetActive(false);
+        player.GetComponent<Collider2D>().enabled = false;
+        player.GetComponent<SpriteRenderer>().enabled = false;
+        
+        PlayerController controller = player.GetComponent<PlayerController>();
+        controller.DisableMovement();
+        controller.DisableGun();
     }
 
     private void ResetAllStats()
