@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: maxHealthUpgrade
   m_EditorClassIdentifier: 
   upgradeName: maxHealth
-  upgradeIncrease: 1
+  upgradeIncrease: 3
   upgradeSprite: {fileID: 21300000, guid: 177b5517d0041bd46a6e4921ec6c002d, type: 3}
   flavorText: Increase max health by
