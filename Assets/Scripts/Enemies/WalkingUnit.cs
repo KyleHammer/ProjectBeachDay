@@ -1,16 +1,15 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class WalkingUnit : IEnemyDamagable
 {
-    [SerializeField] private float moveSpeed = 2.0f;
-    [SerializeField] private float contactDamage = 1.0f;
+    [Header("Enemy Stats")]
+    [SerializeField] private float moveSpeed = 3;
 
     private void FixedUpdate()
     {
         if (playerTransfrom != null)
         {
-            float step = GetSpeed() * Time.deltaTime;
+            float step =  moveSpeed * stats.speedScaling * Time.deltaTime;
 
             Vector2 direction = Vector2.ClampMagnitude(playerTransfrom.position - transform.position, 1);
             
@@ -19,19 +18,6 @@ public class WalkingUnit : IEnemyDamagable
         else
         {
             // Currently no player assigned
-        }
-    }
-
-    private float GetSpeed()
-    {
-        return moveSpeed + (speedScaling * GameManager.Instance.GetDifficulty());
-    }
-
-    private void OnCollisionStay2D(Collision2D col)
-    {
-        if (col.transform.CompareTag("Player"))
-        {
-            col.gameObject.GetComponent<PlayerHealth>().TakeDamage(contactDamage + (damageScaling * GameManager.Instance.GetDifficulty()));
         }
     }
 }

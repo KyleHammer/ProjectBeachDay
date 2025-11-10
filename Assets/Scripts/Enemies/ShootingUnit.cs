@@ -2,20 +2,23 @@ using UnityEngine;
 
 public class ShootingUnit : IEnemyDamagable
 {
-    private float currentShootingCooldown;
+    [Header("Enemy Stats")]
     [SerializeField] private float shootingCooldown = 2.0f;
-    [SerializeField] private float projectileSpeed = 5.0f;
-    [SerializeField] private float projectileDamage = 1.0f;
+    private float currentShootingCooldown;
     
     [Header("Assign in Inspector")]
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform shotPoint;
     
+    [SerializeField] private float projectileSpeed = 20;
+    
+    [SerializeField] private float startingDamage = 1.0f;
+    
     protected override void Start()
     {
         base.Start();
         
-        currentShootingCooldown = shootingCooldown / (speedScaling * GameManager.Instance.GetDifficulty());
+        currentShootingCooldown = shootingCooldown / stats.speedScaling;
     }
 
     // Update is called once per frame
@@ -49,7 +52,7 @@ public class ShootingUnit : IEnemyDamagable
     {
         GameObject newProjectile = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
         newProjectile.GetComponent<Rigidbody2D>().velocity = transform.right * projectileSpeed;
-        newProjectile.GetComponent<Projectile>().SetDamage(projectileDamage + (damageScaling * GameManager.Instance.GetDifficulty()));
+        newProjectile.GetComponent<Projectile>().SetDamage(startingDamage * stats.damageScaling);
         
         currentShootingCooldown = shootingCooldown;
     }

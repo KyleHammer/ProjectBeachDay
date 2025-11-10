@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class DashingUnit : IEnemyDamagable
 {
+    [Header("Enemy Stats")]
     [SerializeField] private float dashCooldown = 2.0f;
-    [SerializeField] private float dashForce = 1.0f;
-    [SerializeField] private float contactDamage = 1.0f;
+    [SerializeField] private float dashForce = 200.0f;
     private float currentDashCooldown;
 
     protected override void Start()
     {
         base.Start();
         
-        currentDashCooldown = dashCooldown / (speedScaling * GameManager.Instance.GetDifficulty());
+        currentDashCooldown = dashCooldown / stats.speedScaling;
     }
 
     protected override void Update()
@@ -45,16 +45,8 @@ public class DashingUnit : IEnemyDamagable
         else
             spriteRenderer.flipX = true;
 
-        rb.AddForce(direction * dashForce, ForceMode2D.Impulse);
+        rb.AddForce(direction * dashForce);
         
         currentDashCooldown = dashCooldown;
-    }
-
-    private void OnCollisionStay2D(Collision2D col)
-    {
-        if (col.transform.CompareTag("Player"))
-        {
-            col.gameObject.GetComponent<PlayerHealth>().TakeDamage(contactDamage + (damageScaling * GameManager.Instance.GetDifficulty()));
-        }
     }
 }

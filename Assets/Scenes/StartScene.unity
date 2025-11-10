@@ -384,10 +384,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dasher (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7859474942681649751, guid: 8bd2ee0fe558d5243bc0827dbb139adf, type: 3}
-      propertyPath: dashForce
-      value: 20000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
