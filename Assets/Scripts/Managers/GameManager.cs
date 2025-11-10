@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
     [Header("All Stats")]
     [SerializeField] private PlayerStatsObject startingStats;
     [SerializeField] private PlayerStatsObject currentStats;
-    [SerializeField] private EnemyStatsObject defaultEnemyStats;
-    [SerializeField] private EnemyStatsObject currentEnemyStats;
-    [SerializeField] private EnemyStatsObject enemyScalingFactor;
     [Space]
     
     [SerializeField] private GameObject pickUpReward;
@@ -21,6 +18,8 @@ public class GameManager : MonoBehaviour
     
     public string[] scenePool;
     private List<GameObject> nextRoomInteractables = new List<GameObject>();
+
+    private int difficulty = 0;
 
     private int score = 0;
     [SerializeField] private int scoreIncrease = 100;
@@ -88,11 +87,14 @@ public class GameManager : MonoBehaviour
         nextRoomInteractables.Clear();
     }
 
-    public void IncreaseDifficulty()
+    public int GetDifficulty()
     {
-        currentEnemyStats.damageScaling += enemyScalingFactor.damageScaling;
-        currentEnemyStats.healthScaling += enemyScalingFactor.healthScaling;
-        currentEnemyStats.speedScaling += enemyScalingFactor.speedScaling;
+        return difficulty;
+    }
+
+    public void SetDifficulty(int newDifficulty)
+    {
+        difficulty = newDifficulty;
     }
     
     // Set in each enemies Start()
@@ -169,9 +171,7 @@ public class GameManager : MonoBehaviour
         currentStats.dashCooldown = startingStats.dashCooldown;
         currentStats.maxHealth = startingStats.maxHealth;
 
-        currentEnemyStats.damageScaling = defaultEnemyStats.damageScaling;
-        currentEnemyStats.healthScaling = defaultEnemyStats.healthScaling;
-        currentEnemyStats.speedScaling = defaultEnemyStats.speedScaling;
+        SetDifficulty(0);
     }
 
     public void PlayAudio(string audioName)

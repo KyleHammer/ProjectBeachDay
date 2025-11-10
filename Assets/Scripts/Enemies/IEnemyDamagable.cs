@@ -10,8 +10,16 @@ public class IEnemyDamagable : MonoBehaviour
     private Material defaultMaterial;
     private float flashDuration = 0.1f;
     private float currentFlashDuration = 0;
-    
-    [SerializeField] protected EnemyStatsObject stats;
+
+    [Header("Enemy Scaling - Difficulty Increase Each Room")]
+    [Tooltip("Increase the speed of enemies movement/shooting each room")]
+    [SerializeField] protected float speedScaling = 0.5f;
+    [Tooltip("Increase the health of enemies each room")]
+    [SerializeField] private float healthScaling = 0.5f;
+    [Tooltip("Increase the damage of enemies each room")]
+    [SerializeField] protected float damageScaling = 0.5f;
+
+    [Header("Enemy Stats")]
     [SerializeField] private float maxHealth = 10f;
     private float currentHealth = 0;
 
@@ -30,7 +38,7 @@ public class IEnemyDamagable : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultMaterial = spriteRenderer.material;
 
-        currentHealth = maxHealth * stats.healthScaling;
+        currentHealth = maxHealth * healthScaling;
     }
 
     protected virtual void Update()

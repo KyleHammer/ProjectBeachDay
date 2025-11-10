@@ -34,7 +34,7 @@ public class NextRoomInteractable : MonoBehaviour
             
             GameManager.Instance.currentRoomUpgrade = upgradeTypeObject;
 
-            GameManager.Instance.IncreaseDifficulty();
+            GameManager.Instance.SetDifficulty(GameManager.Instance.GetDifficulty() + 1);
             
             SceneManager.LoadScene(sceneName);
         }
