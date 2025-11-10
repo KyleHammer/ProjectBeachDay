@@ -26,6 +26,8 @@ public class ShootingUnit : IEnemyDamagable
     {
         base.Update();
         
+        SetSpriteDirection();
+
         if (playerTransfrom != null)
         {
             transform.right = playerTransfrom.position - transform.position;
@@ -53,5 +55,13 @@ public class ShootingUnit : IEnemyDamagable
         newProjectile.GetComponent<Projectile>().SetDamage(startingDamage * stats.damageScaling);
         
         currentShootingCooldown = shootingCooldown;
+    }
+
+    private void SetSpriteDirection()
+    {
+        if (transform.localRotation.z > 0.7 || transform.localRotation.z < -0.7)
+            spriteRenderer.flipY = true;
+        else
+            spriteRenderer.flipY = false;
     }
 }
