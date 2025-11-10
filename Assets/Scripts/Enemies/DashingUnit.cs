@@ -11,7 +11,7 @@ public class DashingUnit : IEnemyDamagable
     {
         base.Start();
         
-        currentDashCooldown = dashCooldown / (speedScaling * GameManager.Instance.GetDifficulty());
+        currentDashCooldown = dashCooldown / (1 + speedScaling * GameManager.Instance.GetDifficulty());
     }
 
     protected override void Update()
@@ -45,7 +45,7 @@ public class DashingUnit : IEnemyDamagable
         else
             spriteRenderer.flipX = true;
 
-        rb.AddForce(direction * dashForce, ForceMode2D.Impulse);
+        rb.AddForce(direction * dashForce * 300, ForceMode2D.Impulse);
         
         currentDashCooldown = dashCooldown;
     }

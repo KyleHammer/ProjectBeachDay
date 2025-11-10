@@ -15,7 +15,7 @@ public class ShootingUnit : IEnemyDamagable
     {
         base.Start();
         
-        currentShootingCooldown = shootingCooldown / (speedScaling * GameManager.Instance.GetDifficulty());
+        currentShootingCooldown = shootingCooldown / (1 + speedScaling * GameManager.Instance.GetDifficulty());
     }
 
     // Update is called once per frame
