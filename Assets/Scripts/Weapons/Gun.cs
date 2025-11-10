@@ -53,7 +53,8 @@ public class Gun : MonoBehaviour
         onCooldown = true;
         currentCooldown = fireRateCooldown;
 
-        GameObject newProjectile = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+        // TODO: Spawn the bullet
+        Debug.LogWarning("Unable to spawn projectile!");
 
         // TODO: Implement bullet movement
 

@@ -4,7 +4,7 @@ public class DashingUnit : IEnemyDamagable
 {
     [Header("Enemy Stats")]
     [SerializeField] private float dashCooldown = 2.0f;
-    [SerializeField] private float dashForce = 200.0f;
+    [SerializeField] private float dashForce = 1.0f;
     private float currentDashCooldown;
 
     protected override void Start()
@@ -45,7 +45,7 @@ public class DashingUnit : IEnemyDamagable
         else
             spriteRenderer.flipX = true;
 
-        rb.AddForce(direction * dashForce);
+        rb.AddForce(direction * dashForce * 300.0f, ForceMode2D.Impulse);
         
         currentDashCooldown = dashCooldown;
     }
