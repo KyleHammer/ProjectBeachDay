@@ -25,6 +25,6 @@ This document lists external assets used in the game, including audio, spritewor
 | Track / Sound Effect | Composer / Source | URL | License |
 |------------------------|-------------------|------|----------|
 | The Will: Background Music | [Rolemusic](https://freemusicarchive.org/music/Rolemusic/) | https://freemusicarchive.org/music/Rolemusic/single/The_Will_1726/ | CC-BY 3.0 with no modifications | 
-| Kevin Macleod: Background Music | [Kevin Macleod](https://incompetech.com/music/royalty-free/music.html) | CC-BY 3.0 with no modifications |
-| Kevin Macleod Themes Used: "Cloud Dancer", "Mesmerizing Galaxy", "Newer Wave" and "Voxel Revolution"|
+| Kevin Macleod: Background Music | [Kevin Macleod](https://incompetech.com/.html) | https://incompetech.com/music/royalty-free/music.html | CC-BY 3.0 by Attribution |
+| Kevin Macleod Themes Used: | Kevin Macleod | "Cloud Dancer", "Mesmerizing Galaxy", "Newer Wave" and "Voxel Revolution"||
 ---
