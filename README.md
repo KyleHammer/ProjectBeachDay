@@ -1,6 +1,8 @@
 # 🌴 ProjectBeachDay
 An introduction to Unity through a beach themed roguelike
 
+Uses Unity version 2022.3.51f1
+
 
 
 
